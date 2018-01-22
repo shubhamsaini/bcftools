@@ -890,7 +890,7 @@ void merge_chrom2qual(args_t *args, bcf1_t *out)
     for (i=0; i<ma->nals; i++)
         if ( i==0 || al_idxs[i] ) ma->out_als[k++] = strdup(ma->als[i]);
     assert( k==ma->nout_als );
-    normalize_alleles(ma->out_als, ma->nout_als);
+//    normalize_alleles(ma->out_als, ma->nout_als);
     bcf_update_alleles(out_hdr, out, (const char**) ma->out_als, ma->nout_als);
     free(al_idxs);
     for (i=0; i<ma->nout_als; i++) free(ma->out_als[i]);
